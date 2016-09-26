@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数码时钟</title>
+<style>
+#div2{ margin:50px auto; font-size:0; text-align:center;}
+#div2 img{ width:50px; margin:0; padding:0;}
+</style>
+<script>
+window.onload=function(){
+	alert(1);
+	var  oDiv1 = document.getElementById('div1'),
+		 oDiv2 = document.getElementById('div2'),
+		 aImg=oDiv2.getElementsByTagName('img'),
+		 arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+         arrImg=['img/number/0.JPG','img/number/1.JPG','img/number/2.JPG','img/number/3.JPG','img/number/4.JPG','img/number/5.JPG','img/number/6.JPG','img/number/7.JPG','img/number/8.JPG','img/number/9.JPG'];
+		 
+		 function fnTime(){
+			 var myTime=new Date();
+			 var iYear=myTime.getFullYear(),
+			     iMonth=myTime.getMonth()+1,//一月份为零
+				 iDate=myTime.getDate(),
+				 iDay=myTime.getDay(),
+				 iHours=myTime.getHours(),
+				 iMinutes=myTime.getMinutes(),
+				 iSeconds=myTime.getSeconds(),
+				 str1='',
+				 str2='';
+	
+		    str1=iYear + '年' + iMonth + '月' + iDate + '日 ' +  arr[iDay] + ' ' + addZero(iHours) + ' : ' + addZero(iMinutes) + ' : ' + addZero(iSeconds);
+			str2=addZero(iHours) + addZero(iMinutes) + addZero(iSeconds);
+			oDiv1.innerHTML=str1;
+			
+		aImg[0].src=arrImg[str2.charAt(0)];	
+		aImg[1].src=arrImg[str2.charAt(1)];	
+		aImg[3].src=arrImg[str2.charAt(2)];	
+		aImg[4].src=arrImg[str2.charAt(3)];	
+		aImg[6].src=arrImg[str2.charAt(4)];	
+		aImg[7].src=arrImg[str2.charAt(5)];	
+		
+
+			 }
+		function addZero(n){
+			return n<10?'0'+n:''+n;
+			}	 
+		fnTime();
+		setInterval(fnTime,1000);	
+	}
+</script>
+</head>
+
+<body>
+ <div id="div1"></div>
+ <div id="div2">
+		<img src="img/number/0.JPG" alt="">
+		<img src="img/number/0.JPG" alt="">
+		<img src="img/number/colon.JPG" alt="">
+		<img src="img/number/0.JPG" alt="">
+		<img src="img/number/0.JPG" alt="">
+		<img src="img/number/colon.JPG" alt="">
+		<img src="img/number/0.JPG" alt="">
+		<img src="img/number/0.JPG" alt="">
+ </div>
+</body>
+</html>
