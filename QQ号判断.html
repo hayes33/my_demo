@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>QQ号判断</title>
+<style>
+#wrap{ width:400px; margin:0 auto;}
+</style>
+<script>
+window.onload=function(){
+	var oTxt=document.getElementsByTagName('input')[0],
+	    oBtn=document.getElementsByTagName('input')[1];
+		
+		oBtn.onclick=function(){
+			if(oTxt.value===''){
+				alert('请输入内容！');
+			}else if(isNaN(oTxt.value)){
+				alert('请输入数字！');
+			}else if(oTxt.value.charAt(0)==0){
+				alert('请第一位输入非零数字！');
+			}else if(parseFloat(oTxt.value)!==parseInt(oTxt.value)){
+				alert('请输入整数！');
+			}else if(oTxt.value.length<5||oTxt.value.length>12){
+				alert('请输入5位以上、12位以内的数字！')
+			}else{
+				alert('恭喜你，QQ号有效！');
+			}
+				
+			}
+	
+	}
+</script>
+</head>
+
+<body>
+<div id="wrap">
+请输入QQ号码：<input type="text" />
+<input type="button" value="判断" />
+<br/>
+<p>1、有没有输入</p>
+<p>2、输入的是不是数字</p>
+<p>3、0不能作为开头</p>
+<p>4、不能是小数</p>
+<p>5、输入的数字必须在5位以上、12位以内</p>
+</div>
+</body>
+</html>
