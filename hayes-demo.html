@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>hayes前端作品列表</title>
+<style>
+body{font-family: "微软雅黑";font-size:12px;}
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+#wrap{ width:350px; border:10px solid #eee; border-radius:10px; margin:20px auto; padding:5px; color:#fff;}
+.lis{ width:100%;margin-bottom:1px; cursor:pointer; text-indent:10px; }
+.lis span{ display:block; width:100%; line-height:40px; background:#2CCDBA; font-size:16px; border:1px solid #2CCDBA; border-radius:6px;  transition:all 0.6s;}
+.lis span:hover{text-indent:25px;  color:#C36; text-shadow:0 2px 1px #169BAD; text-decoration:none; background:#3FF;}
+.lis ul{display:none;}
+.lis li{ width:100%; height:30px; margin-top:1px; line-height:30px;font-size:14px; }
+.lis li a{ height:30px; line-height:30px; font-size:14px; text-decoration:none; color:#0a8cd2; display:block; transition:all 0.6s; border-radius:5px;}
+.lis li a:hover{ text-indent:25px; border-radius:5px; color:#fff; text-shadow:0 2px 1px #169BAD; background-color:#169Bad;text-decoration:none;}
+
+em{ font-size:16px; font-style:normal; padding: 0 2px; height:30px; line-height:30px;}
+#note{ padding:0 20px; position:absolute; right:0; top:0; font-size:12px;}
+#note span{ text-shadow:-1px 2px 3px #000;}
+
+</style>
+<script>
+window.onload=function(){
+
+	var oUl = document.getElementById('list'),
+	    aSpan = oUl.getElementsByTagName('span'),
+		aUl = oUl.getElementsByTagName('ul'),
+		flag=true;
+   for(var i=0;i<aSpan.length;i++){
+		aSpan[i].index=i;
+	
+		aSpan[i].onclick=function(){
+			for(var i=0;i<aSpan.length;i++){
+			aUl[i].style.display='none';
+			aSpan[i].className='';
+			}
+		
+		 aUl[this.index].style.display='block';
+	
+		
+			
+	}
+	}
+	
+
+}
+</script>
+</head>
+
+<body>
+<p id="note">请点击查看菜单中的demo！谢谢观赏，by<span> hayes</span>.&nbsp;&nbsp;&nbsp;&nbsp;Email:1602486247@qq.com</p>
+<div id="wrap">
+    <ul id="list">
+       <li class="lis">
+          <span>简单页面操作(4)</span>
+          <ul>
+             <li><a href="限制字符串长度.html" target="_blank"><em>①</em>限制字符串长度</a></li>
+             <li><a href="禁止复制与粘贴.html" target="_blank"><em>②</em>禁止复制与粘贴</a></li>
+             <li><a href="样式设置.html" target="_blank"><em>③</em>样式设置</a></li>
+             <li><a href="QQ号判断.html" target="_blank"><em>④</em>QQ号判断</a></li>
+          </ul>
+       </li>
+        <li class="lis">
+          <span>图片效果(5)</span>
+           <ul>
+             <li><a href="图片随鼠标不断展现.html"  target="_blank"><em>①</em>图片随鼠标不断展现</a></li>
+             <li><a href="图片轮播（AI）.html" target="_blank"><em>②</em>图片轮播（AI）</a></li>
+             <li><a href="点击滑动图片.html" target="_blank"><em>③</em>点击滑动图片</a></li>
+             <li><a href="图片淡入淡出效果.html" target="_blank"><em>④</em>图片淡入淡出效果</a></li>
+             <li><a href="生成div循环样式.html" target="_blank"><em>⑤</em>生成div循环样式</a></li>
+          </ul>
+       </li>
+        <li class="lis">
+          <span>js其他效果(7)</span>
+          <ul>
+             <li><a href="百叶窗效果.html" target="_blank"><em>①</em>百叶窗效果</a></li>
+             <li><a href="模拟短信发送.html" target="_blank"><em>②</em>模拟短信发送</a></li>
+             <li><a href="百度音乐全选操作.html" target="_blank"><em>③</em>百度音乐全选操作</a></li>
+             <li><a href="留言板（可批量删除）.html" target="_blank"><em>④</em>留言板（可批量删除）</a></li>
+             <li><a href="倒计时时钟.html" target="_blank"><em>⑤</em>倒计时时钟</a></li>
+             <li><a href="键盘控制div移动.html"target="_blank"><em>⑥</em>键盘控制div移动</a></li>
+             <li><a href="拖拽回放.html" target="_blank"><em>⑦</em>拖拽回放</a></li>
+          </ul>
+       </li>
+    </ul>
+</div>
+</body>
+</html>
