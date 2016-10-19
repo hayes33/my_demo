@@ -27,20 +27,23 @@ window.onload=function(){
 	var oUl = document.getElementById('list'),
 	    aSpan = oUl.getElementsByTagName('span'),
 		aUl = oUl.getElementsByTagName('ul'),
-		flag=true;
+		tmp=-1,
+		open=false;
    for(var i=0;i<aSpan.length;i++){
 		aSpan[i].index=i;
-	
 		aSpan[i].onclick=function(){
 			for(var i=0;i<aSpan.length;i++){
 			aUl[i].style.display='none';
 			aSpan[i].className='';
 			}
-		
-		 aUl[this.index].style.display='block';
-	
-		
-			
+		if(tmp == this.index && open){
+		 aUl[this.index].style.display='none';
+		 open=false;
+		}else{
+		 aUl[this.index].style.display='block';	
+		 open=true;
+			 }
+		tmp=this.index; 
 	}
 	}
 	
